@@ -1121,22 +1121,22 @@
                     </div>
                 </div>
                 <div class="booking-form">
-                    <form id="bookingForm">
+                    <form id="bookingForm" action="book.php" method="POST">
                         <div class="form-group">
                             <label for="booking-name">Your Name</label>
-                            <input type="text" id="booking-name" class="form-control" placeholder="Your Full Name" required>
+                            <input type="text" id="booking-name" name="booking-name" class="form-control" placeholder="Your Full Name" required>
                         </div>
                         <div class="form-group">
                             <label for="booking-email">Your Email</label>
-                            <input type="email" id="booking-email" class="form-control" placeholder="Your Email Address" required>
+                            <input type="email" id="booking-email" name="booking-email" class="form-control" placeholder="Your Email Address" required>
                         </div>
                         <div class="form-group">
                             <label for="booking-phone">Your Phone</label>
-                            <input type="tel" id="booking-phone" class="form-control" placeholder="Your Phone Number" required>
+                            <input type="tel" id="booking-phone" name="booking-phone" class="form-control" placeholder="Your Phone Number" required>
                         </div>
                         <div class="form-group">
                             <label for="service-type">Service Type</label>
-                            <select id="service-type" class="form-control" required>
+                            <select id="service-type" name="service-type" class="form-control" required>
                                 <option value="">Select Service</option>
                                 <option value="haircut">Haircut & Styling</option>
                                 <option value="coloring">Hair Coloring</option>
@@ -1149,11 +1149,11 @@
                         </div>
                         <div class="form-group">
                             <label for="preferred-date">Preferred Date</label>
-                            <input type="date" id="preferred-date" class="form-control" required>
+                            <input type="date" id="preferred-date" name="preferred-date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="preferred-time">Preferred Time</label>
-                            <select id="preferred-time" class="form-control" required>
+                            <select id="preferred-time" name="preferred-time" class="form-control" required>
                                 <option value="">Select Time</option>
                                 <option value="9:00">9:00 AM</option>
                                 <option value="10:00">10:00 AM</option>
@@ -1168,11 +1168,11 @@
                         </div>
                         <div class="form-group">
                             <label for="stylist-preference">Stylist Preference (Optional)</label>
-                            <input type="text" id="stylist-preference" class="form-control" placeholder="Preferred stylist (if any)">
+                            <input type="text" id="stylist-preference" name="stylist-preference" class="form-control" placeholder="Preferred stylist (if any)">
                         </div>
                         <div class="form-group">
                             <label for="special-requests">Special Requests</label>
-                            <textarea id="special-requests" class="form-control" rows="3" placeholder="Any special requests or notes for our stylists..."></textarea>
+                            <textarea id="special-requests" name="special-requests" class="form-control" rows="3" placeholder="Any special requests or notes for our stylists..."></textarea>
                         </div>
                         <button type="submit" class="btn">Book Appointment</button>
                     </form>
@@ -1189,26 +1189,26 @@
                 <p>Have questions? We'd love to hear from you</p>
             </div>
             <div class="enquiry-form">
-                <form id="enquiryForm">
+                <form id="enquiryForm" action="mail.php" method="POST">
                     <div class="form-group">
                         <label for="enquiry-name">Your Name</label>
-                        <input type="text" id="enquiry-name" class="form-control" placeholder="Your Full Name" required>
+                        <input type="text" id="enquiry-name" name="enquiry-name" class="form-control" placeholder="Your Full Name" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiry-email">Your Email</label>
-                        <input type="email" id="enquiry-email" class="form-control" placeholder="Your Email Address" required>
+                        <input type="email" id="enquiry-email" name="enquiry-email" class="form-control" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiry-phone">Your Phone</label>
-                        <input type="tel" id="enquiry-phone" class="form-control" placeholder="Your Phone Number">
+                        <input type="tel" id="enquiry-phone" name="enquiry-phone" class="form-control" placeholder="Your Phone Number">
                     </div>
                     <div class="form-group">
                         <label for="enquiry-subject">Subject</label>
-                        <input type="text" id="enquiry-subject" class="form-control" placeholder="Subject" required>
+                        <input type="text" id="enquiry-subject" name="enquiry-subject" class="form-control" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiry-message">Your Message</label>
-                        <textarea id="enquiry-message" class="form-control" rows="5" placeholder="Please describe your enquiry..." required></textarea>
+                        <textarea id="enquiry-message" name="enquiry-message" class="form-control" rows="5" placeholder="Please describe your enquiry..." required></textarea>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
@@ -1309,34 +1309,7 @@
             }
         }
         
-        // Form submissions
-        const bookingForm = document.getElementById('bookingForm');
-        const enquiryForm = document.getElementById('enquiryForm');
-        
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('booking-name').value;
-            const serviceType = document.getElementById('service-type').value;
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you ${name}! Your ${serviceType} appointment request has been received. We will contact you shortly to confirm your booking.`);
-            bookingForm.reset();
-        });
-        
-        enquiryForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('enquiry-name').value;
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you ${name}! Your enquiry has been received. We will respond to your message shortly.`);
-            enquiryForm.reset();
-        });
+         
         
         // Animation on scroll for elements
         const observerOptions = {
