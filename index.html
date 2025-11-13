@@ -799,6 +799,15 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
+       @media (max-width: 768px) {
+    .whatsapp-btn span {
+        display: none;
+    }
+    
+    .whatsapp-btn {
+        padding: 15px;
+    }
+}
         
         @media (max-width: 768px) {
             .menu-toggle {
@@ -873,6 +882,12 @@
 </head>
 <body>
     <!-- Header Section -->
+     <!-- WhatsApp Button -->
+<a href="https://api.whatsapp.com/send?phone=%2B27761248895&context=AfcxAlytVtP_UsAB5f6APVpBND5CwKfAc2DqFvOkTfHx_5m08xz_M6GW-CG5N1MSlKji4CuIR14GURFLzHLn0AV1L1CYdi53QlEP83USbStp9wtyFR5z7WXYLfcEPc_ioOdiK_yZxRR-Vu2c4s9RU4_6RQ&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawOCAuBleHRuA2FlbQIxMABicmlkETFzNmkxUE5zWDRaeXNhNEVjc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnOH9PZr98lSQC1YO4bB18BErSFfFJRCkxjTyUP5XNd_nlTmHsFmduGlW6P-_aem_GW70UoYtEEQZJ4eEbh4nIA" 
+   class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat with us</span>
+</a>
     <header id="home">
         <div class="floating-elements" id="floatingElements"></div>
         <nav id="navbar">
@@ -1342,4 +1357,5 @@
         });
     </script>
 </body>
+
 </html>
