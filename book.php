@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script>
         alert('Error: Please fill in all required fields.');
-        document.location.href = 'home.html';
+        document.location.href = '/book';
        </script>
        ";
        exit;
@@ -225,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            echo "
            <script>
             alert('Error: Please select a date that is today or in the future. You cannot book appointments for past dates.');
-            document.location.href = '/home';
+            document.location.href = '/book';
            </script>
            ";
            exit;
@@ -388,3 +388,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
+
