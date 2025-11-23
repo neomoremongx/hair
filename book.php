@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        <body>
            <div class=\"header\">
                <h1>Appointment Booking Request</h1>
-               <p>The Look Hair Gallery | Making Women Feel Beautiful</p>
+               <p>The Look Hair & Beauty Gallery | Making Women Feel Beautiful</p>
            </div>
            
            <div class=\"content\">
@@ -206,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
            <div class=\"footer\">
                <p style=\"margin: 0; font-size: 14px;\">
-                   <strong>The Look Hair Gallery</strong>
+                   <strong>The Look Hair & Beauty Gallery</strong>
                    <br>
                    234 Mc Roode Avenue, Potchefstroom, South Africa
                    <br>
@@ -225,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            echo "
            <script>
             alert('Error: Please select a date that is today or in the future. You cannot book appointments for past dates.');
-            document.location.href = 'home.html';
+            document.location.href = '/home';
            </script>
            ";
            exit;
@@ -255,7 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
            //Content
            $autoReplyMail->isHTML(true);
-           $autoReplyMail->Subject = "Appointment Request Received - The Look Hair Gallery";
+           $autoReplyMail->Subject = "Appointment Request Received - The Look Hair & Beauty Gallery";
            
            $autoReplyMessage = "
            <html>
@@ -319,7 +319,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <div class=\"content\">
                    <div class=\"thank-you\">Dear {$name},</div>
                    
-                   <p>Thank you for choosing The Look Hair Gallery! We have received your appointment request for <strong>{$service_text}</strong> on <strong>" . date('F j, Y', strtotime($preferred_date)) . "</strong> at <strong>{$preferred_time}</strong>.</p>
+                   <p>Thank you for choosing The Look Hair & Beauty Gallery! We have received your appointment request for <strong>{$service_text}</strong> on <strong>" . date('F j, Y', strtotime($preferred_date)) . "</strong> at <strong>{$preferred_time}</strong>.</p>
                    
                    <div class=\"appointment-details\">
                        <h3 style=\"color: #e75480; margin-top: 0;\">Your Appointment Request</h3>
@@ -342,13 +342,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    <p>For any questions or to make changes to your appointment, please call us at 076 124 8895.</p>
                    
                    <p>We look forward to making you feel beautiful!<br>
-                   <strong>The Look Hair Gallery Team</strong></p>
+                   <strong>The Look Hair & Beauty Gallery Team</strong></p>
                </div>
                <div class=\"footer\">
                    <p style=\"margin: 0; font-size: 14px;\">
                        <strong>The Look Hair Gallery</strong><br>
                        Making Women Feel Beautiful<br>
-                       © " . date('Y') . " The Look Hair Gallery. All rights reserved.
+                       © " . date('Y') . " The Look Hair & Beauty Gallery. All rights reserved.
                    </p>
                </div>
            </body>
@@ -367,7 +367,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script> 
         alert('Thank you {$name}! Your appointment request for {$service_text} has been received. We will contact you shortly to confirm your booking.');
-        document.location.href = 'home.html';
+        document.location.href = '/home';
        </script>
        ";
        
@@ -376,14 +376,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script> 
         alert('Sorry, there was an error sending your appointment request. Please try again or call us directly at 076 124 8895.');
-        document.location.href = 'home.html';
+        document.location.href = '/home';
        </script>
        ";
    }
 } else {
    // If not a POST request, redirect to home
-   header("Location: index.html");
+   header("Location: /home");
    exit;
 }
+
 
 ?>
