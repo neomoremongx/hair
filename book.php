@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $service_type = isset($_POST["service-type"]) ? $_POST["service-type"] : '';
    $preferred_date = isset($_POST["preferred-date"]) ? $_POST["preferred-date"] : '';
    $preferred_time = isset($_POST["preferred-time"]) ? $_POST["preferred-time"] : '';
-   $stylist_preference = isset($_POST["stylist-preference"]) ? $_POST["stylist-preference"] : '';
    $special_requests = isset($_POST["special-requests"]) ? $_POST["special-requests"] : '';
 
    // Validate required fields
@@ -29,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script>
         alert('Error: Please fill in all required fields.');
-        document.location.href = 'index.html';
+        document.location.href = 'home.html';
        </script>
        ";
        exit;
@@ -192,12 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                        <span class=\"detail-value\">{$phone}</span>
                    </div>
                    
-                   " . (!empty($stylist_preference) ? "
-                   <div class=\"detail-row\">
-                       <span class=\"detail-label\">Stylist Preference:</span>
-                       <span class=\"detail-value\">{$stylist_preference}</span>
-                   </div>
-                   " : "") . "
+ 
                </div>
                
                " . (!empty($special_requests) ? "
@@ -231,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            echo "
            <script>
             alert('Error: Please select a date that is today or in the future. You cannot book appointments for past dates.');
-            document.location.href = 'index.html';
+            document.location.href = 'home.html';
            </script>
            ";
            exit;
@@ -373,7 +367,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script> 
         alert('Thank you {$name}! Your appointment request for {$service_text} has been received. We will contact you shortly to confirm your booking.');
-        document.location.href = 'index.html';
+        document.location.href = 'home.html';
        </script>
        ";
        
@@ -382,7 +376,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "
        <script> 
         alert('Sorry, there was an error sending your appointment request. Please try again or call us directly at 076 124 8895.');
-        document.location.href = 'index.html';
+        document.location.href = 'home.html';
        </script>
        ";
    }
