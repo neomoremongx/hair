@@ -27,8 +27,11 @@ switch($path){
         require "services.html";
         break;
         
-    case "/services":
-        require "services.html";
+    case "/gallery":
+        require "gallery.html";
+        break;
+    case "/book":
+        require "book.html";
         break;
 
     case "/contact":
