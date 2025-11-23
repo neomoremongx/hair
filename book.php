@@ -231,6 +231,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            exit;
        }
 
+       // Check if selected date is Sunday (0) or Monday (1)
+       $selected_day = date('w', strtotime($preferred_date)); // 'w' returns 0 for Sunday, 1 for Monday, etc.
+       
+       if ($selected_day == 0) { // Sunday
+           echo "
+           <script>
+            alert('Error: We are closed on Sundays. Please select another day for your appointment.');
+            document.location.href = '/book';
+           </script>
+           ";
+           exit;
+       }
+       
+       if ($selected_day == 1) { // Monday
+           echo "
+           <script>
+            alert('Error: We are closed on Mondays. Please select another day for your appointment.');
+            document.location.href = '/book';
+           </script>
+           ";
+           exit;
+       }
+
        // Success sent message alert
        $mail->Body = $booking_message;
        $mail->send();
@@ -386,6 +409,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    exit;
 }
 
-
 ?>
-
