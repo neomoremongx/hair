@@ -237,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        if ($selected_day == 0) { // Sunday
            echo "
            <script>
-            alert('Error: We are closed on Sundays. Please select another day for your appointment.');
+            alert('Error: We are closed on Sundays. Please select between Tuesday to Saturday.');
             document.location.href = '/book';
            </script>
            ";
@@ -247,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        if ($selected_day == 1) { // Monday
            echo "
            <script>
-            alert('Error: We are closed on Mondays. Please select another day for your appointment.');
+            alert('Error: We are closed on Mondays. Please select between Tuesday to Saturday.');
             document.location.href = '/book';
            </script>
            ";
@@ -410,3 +410,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
