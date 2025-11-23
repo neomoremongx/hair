@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td style="background: linear-gradient(135deg, #e75480, #f5c6aa); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
                         <h1 style="margin: 0; font-size: 28px; font-weight: bold;">New Contact Inquiry</h1>
-                        <p style="margin: 10px 0 0 0; font-size: 16px;">The Look Hair Gallery | Making Women Feel Beautiful</p>
+                        <p style="margin: 10px 0 0 0; font-size: 16px;">The Look Hair & Beauty Gallery | Making Women Feel Beautiful</p>
                     </td>
                 </tr>
                 
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <strong>The Look Hair Gallery</strong><br>
                             234 MC Roode Road, Van der Hoff Park, Potchefstroom, South Africa<br>
                             Phone: 076 124 8895<br>
-                            © ' . date('Y') . ' The Look Hair Gallery. All rights reserved.
+                            © ' . date('Y') . ' The Look Hair & Beauty Gallery. All rights reserved.
                         </p>
                     </td>
                 </tr>
@@ -148,13 +148,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $autoReplyMail->Port       = 465;
 
             //Recipients
-            $autoReplyMail->setFrom('neomoremongx@gmail.com', 'The Look Hair Gallery');
+            $autoReplyMail->setFrom('neomoremongx@gmail.com', 'The Look Hair & Beauty Gallery');
             $autoReplyMail->addAddress($email, $name); // Send to the client
-            $autoReplyMail->addReplyTo('neomoremongx@gmail.com', 'The Look Hair Gallery');
+            $autoReplyMail->addReplyTo('neomoremongx@gmail.com', 'The Look Hair & Beauty Gallery');
 
             //Content
             $autoReplyMail->isHTML(true);
-            $autoReplyMail->Subject = "Thank You for Your Inquiry - The Look Hair Gallery";
+            $autoReplyMail->Subject = "Thank You for Your Inquiry - The Look Hair & Beauty Gallery";
             
             $autoReplyMessage = '
             <!DOCTYPE html>
@@ -178,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td style="background: #fdf2f8; padding: 30px; border: 1px solid #fce7f3; border-top: none;">
                             <div style="font-size: 18px; color: #e75480; margin-bottom: 20px; font-weight: bold;">Dear ' . htmlspecialchars($name) . ',</div>
                             
-                            <p style="margin: 0 0 20px 0;">Thank you for reaching out to The Look Hair Gallery. We have received your inquiry and our team will review your message promptly.</p>
+                            <p style="margin: 0 0 20px 0;">Thank you for reaching out to The Look Hair & Beauty Gallery. We have received your inquiry and our team will review your message promptly.</p>
                             
                             <!-- Inquiry Summary -->
                             <table width="100%" cellpadding="0" cellspacing="0" style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #e75480;">
@@ -210,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p style="margin: 0 0 20px 0;">For urgent matters, please feel free to call us directly at 076 124 8895.</p>
                             
                             <p style="margin: 0;">We look forward to helping you look and feel beautiful!<br>
-                            <strong>The Look Hair Gallery Team</strong></p>
+                            <strong>The Look Hair & Beauty Gallery Team</strong></p>
                         </td>
                     </tr>
                     
@@ -218,9 +218,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <tr>
                         <td style="background: linear-gradient(135deg, #e75480, #f5c6aa); color: white; padding: 25px; text-align: center; border-radius: 0 0 8px 8px; margin-top: 20px;">
                             <p style="margin: 0; font-size: 14px;">
-                                <strong>The Look Hair Gallery</strong><br>
+                                <strong>The Look Hair & Beauty Gallery</strong><br>
                                 Making Women Feel Beautiful<br>
-                                © ' . date('Y') . ' The Look Hair Gallery. All rights reserved.
+                                © ' . date('Y') . ' The Look Hair & Beauty Gallery. All rights reserved.
                             </p>
                         </td>
                     </tr>
@@ -240,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "
         <script> 
          alert('Thank you " . htmlspecialchars($name) . "! Your inquiry has been sent successfully. We will contact you shortly.');
-         document.location.href = 'home.html';
+         document.location.href = '/contact';
         </script>
         ";
         
@@ -249,13 +249,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "
         <script> 
          alert('Sorry, there was an error sending your inquiry. Please try again or contact us directly at 076 124 8895.');
-         document.location.href = 'home.html';
+         document.location.href = '/contact';
         </script>
         ";
     }
 } else {
     // If not a POST request, redirect to home
-    header("Location: home.html");
+    header("Location: /home");
     exit;
 }
+
 ?>
