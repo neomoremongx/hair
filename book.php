@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
        //Recipients
        $mail->setFrom($email, $name); // Sender Email and name
-       $mail->addAddress('neomoremongx@gmail.com');     //Add a recipient email  
+       $mail->addAddress('bblignaut0gmail.com');     //Add a recipient email  
        $mail->addReplyTo($email, $name); // reply to sender email
 
        //Content
@@ -243,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            ";
            exit;
        }
-       
+       /**
        if ($selected_day == 1) { // Monday
            echo "
            <script>
@@ -253,6 +253,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            ";
            exit;
        }
+       */
 
        // Success sent message alert
        $mail->Body = $booking_message;
@@ -410,4 +411,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 
