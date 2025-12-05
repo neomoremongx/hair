@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
        //Recipients
        $mail->setFrom($email, $name); // Sender Email and name
-       $mail->addAddress('bblignaut0gmail.com');     //Add a recipient email  
+       $mail->addAddress('bblignaut0@gmail.com');     //Add a recipient email  
        $mail->addReplyTo($email, $name); // reply to sender email
 
        //Content
@@ -411,5 +411,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 
 
